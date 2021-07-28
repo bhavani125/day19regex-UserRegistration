@@ -16,11 +16,18 @@ public class UserRegistration {
     }
 
     //Creating readInput method to take input from user
-    private void readInput() {
+    private void readInput()
+    {
+
         System.out.println("Enter first name ");
         String firstName = sc.next();
         //calling validateInput method
         validateInput(namePattern, firstName);
+
+        System.out.println("Enter last name ");
+        String lastName = sc.next();
+        //calling validateLastName method
+        validateInput(namePattern,lastName);
     }
     //Creating validateInput method  is to check
     private void validateInput(String pattern, String input) {
