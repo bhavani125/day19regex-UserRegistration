@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 public class UserRegistration {
     Scanner sc = new Scanner(System.in);
     public static final String namePattern = "[A-Z]{1}[A-Za-z]{2,}";
+    public static final String emailPattern ="([0-9A-Za-z])+([-+._][0-9A-Za-z]+)*" + "@([0-9A-Za-z])+[.]([a-zA-Z])+([.][A-Za-z]+)*";
     //Main Method
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration program");
@@ -28,6 +29,11 @@ public class UserRegistration {
         String lastName = sc.next();
         //calling validateLastName method
         validateInput(namePattern,lastName);
+
+        System.out.println("Enter email id ");
+        String emailId = sc.next();
+        //calling validateEmailId method
+        validateInput(emailPattern,emailId);
     }
     //Creating validateInput method  is to check
     private void validateInput(String pattern, String input) {
