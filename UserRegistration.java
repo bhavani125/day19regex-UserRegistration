@@ -9,6 +9,7 @@ public class UserRegistration {
     public static final String emailPattern ="([0-9A-Za-z])+([-+._][0-9A-Za-z]+)*" + "@([0-9A-Za-z])+[.]([a-zA-Z])+([.][A-Za-z]+)*";
     public static final String numberPattern="^[+0-9]{2}{10}$";
     public static final String passwordPattern = "[0-9a-zA-Z!@#$%^&*]{8,}";
+    public static final String numericPwdPattern ="^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9@$!%*#?&]{6,}$";
     //Main Method
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration program");
@@ -52,7 +53,12 @@ public class UserRegistration {
         //calling validateInput method
         validateInput(passwordPattern,password1);
 
+        System.out.println("Enter the numeric password pattern");
+        String password2 = sc.next();
+        //calling validateInput method
+        validateInput(numericPwdPattern,password2);
     }
+
     //Creating validateInput method  is to check
     private void validateInput(String pattern, String input) {
         if (Pattern.matches(pattern, input)) {
