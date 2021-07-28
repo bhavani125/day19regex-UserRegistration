@@ -1,5 +1,6 @@
 package com.bridgelabz;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -18,6 +19,42 @@ public class UserRegistration {
         UserRegistration userRegistration = new UserRegistration();
         //calling readInput method here
         userRegistration.readInput();
+        userRegistration.EmailPatternTest();
+    }
+    //Creating EmailPatternTest method for all email samples
+    private void EmailPatternTest() {
+        String sampleEmail1 = "abc@yahoo.com";
+        String sampleEmail2 = "abc-100@yahoo.com";
+        String sampleEmail3 = "abc.100@yahoo.com";
+        String sampleEmail4 = "abc111@abc.com";
+        String sampleEmail5 = "abc-100@abc.net";
+        String sampleEmail6 = "abc.100@abc.com.au";
+        String sampleEmail7 = "abc@1.com";
+        String sampleEmail8 = "abc@gmail.com.com";
+        String sampleEmail9 = "abc+100@gmail.com";
+        //Creating arrayList
+        ArrayList<String> emailIdList = new ArrayList<String>();
+        emailIdList.add(sampleEmail1);
+        emailIdList.add(sampleEmail2);
+        emailIdList.add(sampleEmail3);
+        emailIdList.add(sampleEmail4);
+        emailIdList.add(sampleEmail5);
+        emailIdList.add(sampleEmail6);
+        emailIdList.add(sampleEmail7);
+        emailIdList.add(sampleEmail8);
+        emailIdList.add(sampleEmail9);
+
+        for (String emailId : emailIdList)
+        {
+            if (Pattern.matches(emailPattern, emailId))
+            {
+                System.out.println(emailId + " - valid ");
+            }
+            else
+            {
+                System.out.println(emailId + " - Invalid ");
+            }
+        }
     }
 
     //Creating readInput method to take input from user
