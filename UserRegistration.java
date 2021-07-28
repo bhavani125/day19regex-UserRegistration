@@ -10,6 +10,7 @@ public class UserRegistration {
     public static final String numberPattern="^[+0-9]{2}{10}$";
     public static final String passwordPattern = "[0-9a-zA-Z!@#$%^&*]{8,}";
     public static final String numericPwdPattern ="^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9@$!%*#?&]{6,}$";
+    public static final String specialCharPattern = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z0-9@$!%*?&]{5,}$";
     //Main Method
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration program");
@@ -44,21 +45,26 @@ public class UserRegistration {
         validateInput(numberPattern,phoneNumber);
 
         System.out.println("Enter a password");
-        String password = sc.next();
-        //calling validateInput method
-        validateInput(passwordPattern,password);
-
-        System.out.println("Enter the password atleast one upperCase");
         String password1 = sc.next();
         //calling validateInput method
         validateInput(passwordPattern,password1);
 
-        System.out.println("Enter the numeric password pattern");
+        System.out.println("Enter the password atleast one upperCase");
         String password2 = sc.next();
         //calling validateInput method
-        validateInput(numericPwdPattern,password2);
-    }
+        validateInput(passwordPattern,password2);
 
+        System.out.println("Enter the numeric password pattern");
+        String password3 = sc.next();
+        //calling validateInput method
+        validateInput(numericPwdPattern,password3);
+
+        System.out.println("Enter a password having  exactly one special character");
+        String password4 = sc.next();
+        //calling validateInput method
+        validateInput(specialCharPattern,password4);
+
+    }
     //Creating validateInput method  is to check
     private void validateInput(String pattern, String input) {
         if (Pattern.matches(pattern, input)) {
