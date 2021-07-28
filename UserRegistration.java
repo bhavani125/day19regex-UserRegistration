@@ -47,6 +47,11 @@ public class UserRegistration {
         //calling validateInput method
         validateInput(passwordPattern,password);
 
+        System.out.println("Enter the password atleast one upperCase");
+        String password1 = sc.next();
+        //calling validateInput method
+        validateInput(passwordPattern,password1);
+
     }
     //Creating validateInput method  is to check
     private void validateInput(String pattern, String input) {
